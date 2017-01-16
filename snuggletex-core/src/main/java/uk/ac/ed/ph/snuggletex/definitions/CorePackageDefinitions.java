@@ -52,6 +52,7 @@ public final class CorePackageDefinitions {
 
     public static final BuiltinCommand CMD_CHAR_BACKSLASH;
     public static final BuiltinCommand CMD_FRAC;
+    public static final BuiltinCommand CMD_GENFRAC;
     public static final BuiltinCommand CMD_BINOM;
     public static final BuiltinCommand CMD_ITEM;
     public static final BuiltinCommand CMD_LIST_ITEM;
@@ -332,6 +333,7 @@ public final class CorePackageDefinitions {
         CMD_OVER = corePackage.addSimpleCommand("over", MATH_MODE_ONLY, null, null); /* TeX style fractions {... \over ...}, replaced during fixing */
         CMD_CHOOSE = corePackage.addSimpleCommand("choose", MATH_MODE_ONLY, null, null); /* TeX style fractions {... \choose ...}, replaced during fixing */
         CMD_BINOM = corePackage.addComplexCommandSameArgMode("binom", false, 2, Globals.MATH_MODE_ONLY, new BinomHandler(), null);
+        CMD_GENFRAC = corePackage.addComplexCommandSameArgMode("genfrac", true, 6, Globals.MATH_MODE_ONLY, new GenfracHandler(), null);
 
         /* Spacing */
         corePackage.addSimpleCommand("quad", ALL_MODES, new SpaceHandler("\u00a0", "1em"), null);

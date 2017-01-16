@@ -333,7 +333,7 @@ public final class SnugglePackage {
             inputReader.close();
         }
         catch (Exception e) {
-            throw new SnuggleRuntimeException("Got Exception while reading and parsing math character definitions from resource " + resourceLocation, e);
+            //throw new SnuggleRuntimeException("Got Exception while reading and parsing math character definitions from resource " + resourceLocation, e);
         }
     }
     
@@ -341,7 +341,7 @@ public final class SnugglePackage {
         BuiltinCommand command = getBuiltinCommandByTeXName(texName);
         MathCharacter mathCharacter = command!=null ? command.getMathCharacter() : null;
         if (command==null || mathCharacter==null) {
-            throw new SnuggleRuntimeException(errorMessageContext + " must be a previously-defined math character input command");
+            //throw new SnuggleRuntimeException(errorMessageContext + " must be a previously-defined math character input command");
         }
         return mathCharacter;
     }
